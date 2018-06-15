@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pre:</strong>
+  <%= @wod.pre %>
+</p>
+
+<p>
+  <strong>Technique:</strong>
+  <%= @wod.technique %>
+</p>
+
+<p>
+  <strong>Workout:</strong>
+  <%= @wod.workout %>
+</p>
+
+<p>
+  <strong>Pos:</strong>
+  <%= @wod.pos %>
+</p>
+
+<%= link_to 'Edit', edit_wod_path(@wod) %> |
+<%= link_to 'Back', wods_path %>

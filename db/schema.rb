@@ -10,10 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180615195847) do
+ActiveRecord::Schema.define(version: 20180615210402) do
+
+  create_table "checkins", force: :cascade do |t|
+    t.text "obs"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "wod_id"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_checkins_on_user_id"
+    t.index ["wod_id"], name: "index_checkins_on_wod_id"
+  end
 
   create_table "testes", force: :cascade do |t|
     t.string "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.integer "points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "wods", force: :cascade do |t|
+    t.text "pre"
+    t.text "technique"
+    t.text "workout"
+    t.text "pos"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

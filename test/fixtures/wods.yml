@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pre: MyText
+  technique: MyText
+  workout: MyText
+  pos: MyText
+
+two:
+  pre: MyText
+  technique: MyText
+  workout: MyText
+  pos: MyText

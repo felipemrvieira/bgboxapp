@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :checkins, dependent: :destroy
+    has_many :checkins
     has_many :wods, through: :checkins
     belongs_to :coach
 

@@ -15,10 +15,17 @@ class CheckinsController < ApplicationController
   # GET /checkins/new
   def new
     @checkin = Checkin.new
+    @wod_options = Wod.all
+    @user_options = User.all
+
+
   end
 
   # GET /checkins/1/edit
   def edit
+    @wod_options = Wod.all
+    @user_options = User.all
+
   end
 
   # POST /checkins
@@ -69,6 +76,6 @@ class CheckinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def checkin_params
-      params.require(:checkin).permit(:obs)
+      params.require(:checkin).permit(:obs, :user_id, :wod_id)
     end
 end

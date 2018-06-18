@@ -11,9 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :obs %>
     <%= form.text_area :obs, id: :checkin_obs %>
+  </div>
+  
+   <div class="field form-group">
+    <%= form.label :wod_id %>
+    <%= collection_select(:checkin, :wod_id, @wod_options, :id, :wod_date )%>
+  </div>
+  <div class="field form-group">
+    <%= form.label :user_id %>
+    <%= collection_select(:checkin, :user_id, @user_options, :id, :name )%>
   </div>
 
   <div class="actions">

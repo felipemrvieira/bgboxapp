@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @coach_options = Coach.all
+
   end
 
   # GET /users/1/edit

@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+ <div class="field">
+    <%= form.label :wod_date %>
+    <%= datetime_select("wod", "wod_date", selected: Date.today) %>
+  </div>
+
   <div class="field">
     <%= form.label :pre %>
     <%= form.text_area :pre, id: :wod_pre %>
@@ -29,6 +34,12 @@
   <div class="field">
     <%= form.label :pos %>
     <%= form.text_area :pos, id: :wod_pos %>
+  </div>
+
+  <div class="field">
+    <%= form.collection_check_boxes :coach_ids, Coach.all, :id, :name do |cb| %>
+      <%= cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
+    <% end %>
   </div>
 
   <div class="actions">

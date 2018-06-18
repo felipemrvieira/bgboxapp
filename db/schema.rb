@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180615224629) do
+ActiveRecord::Schema.define(version: 20180618183957) do
 
   create_table "checkins", force: :cascade do |t|
     t.text "obs"
@@ -39,6 +39,15 @@ ActiveRecord::Schema.define(version: 20180615224629) do
     t.index ["coach_id"], name: "index_users_on_coach_id"
   end
 
+  create_table "wod_coaches", force: :cascade do |t|
+    t.integer "wod_id"
+    t.integer "coach_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coach_id"], name: "index_wod_coaches_on_coach_id"
+    t.index ["wod_id"], name: "index_wod_coaches_on_wod_id"
+  end
+
   create_table "wods", force: :cascade do |t|
     t.text "pre"
     t.text "technique"
@@ -46,6 +55,7 @@ ActiveRecord::Schema.define(version: 20180615224629) do
     t.text "pos"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "wod_date"
   end
 
 end

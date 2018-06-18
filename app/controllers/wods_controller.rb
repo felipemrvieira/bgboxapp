@@ -69,6 +69,6 @@ class WodsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wod_params
-      params.require(:wod).permit(:pre, :technique, :workout, :pos)
+      params.require(:wod).permit(:pre, :technique, :workout, :pos, :wod_date, coach_ids: [])
     end
 end

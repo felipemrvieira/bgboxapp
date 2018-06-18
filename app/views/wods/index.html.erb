@@ -2,9 +2,11 @@
 
 <h1>Wods</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
+      <th>Data</th>
+      <th>Coach</th>
       <th>Pre</th>
       <th>Technique</th>
       <th>Workout</th>
@@ -16,6 +18,12 @@
   <tbody>
     <% @wods.each do |wod| %>
       <tr>
+        <td><%= wod.wod_date %></td>
+        <td>
+          <%wod.coaches.each do |c|%>
+            <%= c.name %><br>
+          <%end%>
+        </td>
         <td><%= wod.pre %></td>
         <td><%= wod.technique %></td>
         <td><%= wod.workout %></td>

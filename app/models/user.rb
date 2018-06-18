@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     has_many :checkins, dependent: :destroy
     has_many :wods, through: :checkins
+    belongs_to :coach
 
     validates :name, presence: true,
     uniqueness: { case_sensitive: false },

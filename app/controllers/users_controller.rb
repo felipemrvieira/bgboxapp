@@ -15,10 +15,12 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @coach_options = Coach.all
   end
 
   # GET /users/1/edit
   def edit
+    @coach_options = Coach.all
   end
 
   # POST /users
@@ -69,6 +71,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :points)
+      params.require(:user).permit(:name, :email, :points, :coach_id)
     end
 end

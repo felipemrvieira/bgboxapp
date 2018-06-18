@@ -24,11 +24,13 @@
   </div>
 
   <div class="field form-group">
-    <%= form.label :points %>
-    <%= form.number_field :points, class: "form-control", id: :user_points %>
+    <%= form.label :coach_id %>
+    <%= collection_select(:user, :coach_id, @coach_options, :id, :name) %>
   </div>
 
+  
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-info" %>
   </div>
 <% end %>
